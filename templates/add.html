@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Add {% endblock %}
+
+{% block content %}
+<br>
+<center>
+	{% if  my_answer %}
+<div class="alert alert-{{alert}} alert-dismissible fade show" role="alert">
+  {{ my_answer }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+	{% endif %}
+<h1><img src="/static/images/{{ num_1 }}.png">  + <img src="/static/images/{{ num_2 }}.png"></h1>
+<br>
+<form action="{% url 'add' %}" method="POST">
+	{% csrf_token %}
+  <div class="form-group">
+    <input type="text"  class="form-control" autocomplete="off" placeholder="Type Your Answer Here..." name="answer" >
+    <input type="hidden" class="form-control"  name="old_num_1" value="{{ num_1}}" >
+    <input type="hidden" class="form-control" name="old_num_2" value="{{ num_2 }}" >
+  </div>
+  <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+
+</center>
+{% endblock %}

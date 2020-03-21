@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Math FlashCards {% endblock %}
+
+{% block content %}
+<br><br>
+<div class="jumbotron">
+  <h1 class="display-4">Hello, There!</h1>
+  <p class="lead">Start Practicing Math Right Now.</p>
+  <hr class="my-4">
+  <a class="btn btn-primary btn-lg" href="{% url 'add' %}" role="button">Adding</a>
+  <a class="btn btn-primary btn-lg" href="{% url 'subtract' %}" role="button">Subtracting</a>
+  <a class="btn btn-primary btn-lg" href="{% url 'multiply' %}" role="button">Multiplying</a>
+  <a class="btn btn-primary btn-lg" href="{% url 'devide' %}" role="button">Devision</a>
+</div>
+{% endblock %}
